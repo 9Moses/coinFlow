@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 interface CryptoData {
   name: string;
@@ -19,7 +19,7 @@ const CryptoData: React.FC = () => {
       const response = await axios.get<CryptoData[]>(url);
       setData(response.data[0]);
       setLoading(false);
-    } catch (e: any) {
+    } catch (e) {
       if (axios.isAxiosError(e)) {
         setError(e.message);
       } else {
