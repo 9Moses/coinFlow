@@ -1,5 +1,5 @@
 import { SelectedPage } from "@/components/shared/types";
-import React, { useState } from "react";
+import { useState } from "react";
 import LinkWithDropdown from "./Links";
 import { ActionButton } from "@/components/shared/Button/actionButton";
 import useMediaQuery from "@/components/mediaQuery/useMediaQuery";
