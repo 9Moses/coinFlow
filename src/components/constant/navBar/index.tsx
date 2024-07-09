@@ -15,7 +15,7 @@ const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const flexCenter = "flex items-center justify-center";
-  const navbarBackground = isTopOfPage ? "" : "bg-black drop-shadow ";
+  const navbarBackground = isTopOfPage ? "" : "bg-black drop-shadow text-white";
   return (
     <nav>
       <div
