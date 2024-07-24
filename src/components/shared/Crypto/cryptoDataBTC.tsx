@@ -22,7 +22,7 @@ Chart.register(
   Legend
 );
 
-export const CryptoCurrencyInfo: React.FC = () => {
+export const CryptoDataBTC: React.FC = () => {
   const [cryptoData, updateCryptoData] = useState<CryptoData[]>([]);
   const [isFetchingData, updateIsFetchingData] = useState(false);
 
@@ -38,20 +38,20 @@ export const CryptoCurrencyInfo: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap mt-20 justify-center gap-6">
-      <div className="p-4 rounded-lg bg-white shadow-md md:w-[400px] w-full m-4">
+    <div className="flex flex-wrap justify-center gap-6">
+      <div className="p-4 rounded-lg bg-white shadow-md  md:w-[250px] w-full">
         {isFetchingData ? (
           <div className="flex justify-center items-center w-full h-64">
             <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900"></div>
           </div>
         ) : (
-          cryptoData.slice(2, 3).map((crypto) => (
+          cryptoData.slice(0, 1).map((crypto) => (
             <div key={crypto.id}>
               <div className="flex justify-between">
                 <div>
                   <div className="flex items-center mb-2">
                     <img
-                      src={`https://cryptologos.cc/logos/tether-usdt-logo.png`}
+                      src={`https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/2048px-Bitcoin.svg.png`}
                       alt={crypto.name}
                       className="w-10 h-10 mr-2"
                     />
@@ -80,50 +80,50 @@ export const CryptoCurrencyInfo: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <div className="mt-8 w-[150px] h-[100px] p-4">
-                  <Line
-                    data={{
-                      labels:
-                        crypto.historical_data?.map((data) => data.date) ?? [],
-                      datasets: [
-                        {
-                          label: "Price (USD)",
-                          data:
-                            crypto.historical_data?.map((data) => data.price) ??
-                            [],
-                          borderColor:
-                            parseFloat(crypto.percent_change_24h) < 0
-                              ? "#ff0000"
-                              : "#00ff00",
-                          borderWidth: 1,
-                          fill: "origin",
-                          backgroundColor:
-                            parseFloat(crypto.percent_change_24h) < 0
-                              ? "rgba(255, 0, 0, 0.2)"
-                              : "rgba(0, 255, 0, 0.2)",
-                          pointRadius: 1,
-                        },
-                      ],
-                    }}
-                    options={{
-                      responsive: true,
-                      maintainAspectRatio: false,
-                      plugins: {
-                        legend: {
-                          display: false,
-                        },
+              </div>
+              <div className="mt-8 w-full h-[100px] p-4">
+                <Line
+                  data={{
+                    labels:
+                      crypto.historical_data?.map((data) => data.date) ?? [],
+                    datasets: [
+                      {
+                        label: "Price (USD)",
+                        data:
+                          crypto.historical_data?.map((data) => data.price) ??
+                          [],
+                        borderColor:
+                          parseFloat(crypto.percent_change_24h) < 0
+                            ? "#ff0000"
+                            : "#00ff00",
+                        borderWidth: 1,
+                        fill: "origin",
+                        backgroundColor:
+                          parseFloat(crypto.percent_change_24h) < 0
+                            ? "rgba(255, 0, 0, 0.2)"
+                            : "rgba(0, 255, 0, 0.2)",
+                        pointRadius: 1,
                       },
-                      scales: {
-                        x: {
-                          display: false,
-                        },
-                        y: {
-                          display: false,
-                        },
+                    ],
+                  }}
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: {
+                        display: false,
                       },
-                    }}
-                  />
-                </div>
+                    },
+                    scales: {
+                      x: {
+                        display: false,
+                      },
+                      y: {
+                        display: false,
+                      },
+                    },
+                  }}
+                />
               </div>
             </div>
           ))

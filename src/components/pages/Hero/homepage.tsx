@@ -1,10 +1,14 @@
-import CryptoCurrencyInfo from "@/components/shared/Crypto/CryptoData";
+import {
+  CryptoCurrencyInfo,
+  CryptoCurrencyInfoList,
+  CryptoDataBTC,
+} from "@/components/shared/Crypto";
 import React from "react";
 
 export const Home: React.FC = () => {
   return (
     <div className="gap-16 py-10 md:h-full md:pb-10">
-      <div className="md:flex mx-auto w-5/6 items-center justify-between">
+      <div className="md:flex md:gap-8 mx-auto w-5/6 items-center justify-between">
         <div className="mt-32 basis-3/5 ">
           <div className="p-3 rounded-md bg-primary-100/20 flex items-center justify-center md:w-[240px]">
             <p className="font-[500] text-sm text-primary-100">
@@ -29,8 +33,18 @@ export const Home: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex basis-3/5 ">
-          <CryptoCurrencyInfo />
+        <div className="flex md:justify-end basis-3/5  ">
+          <div className="flex flex-col ">
+            <CryptoCurrencyInfo />
+            <div className="flex gap-3">
+              <div className="mt-1">
+                <CryptoCurrencyInfoList />
+              </div>
+              <div className="mt-1">
+                <CryptoDataBTC />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
