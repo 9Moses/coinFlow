@@ -56,13 +56,15 @@ export const CryptoDataBTC: React.FC = () => {
                       className="w-10 h-10 mr-2"
                     />
                     <div className="flex flex-col justify-start">
-                      <span className="text-lg font-semibold">
+                      <span className="text-md font-semibold">
                         {crypto.name}
                       </span>
-                      <p className="text-gray-500 text-sm">{crypto.symbol}</p>
+                      <p className="text-gray-500 text-[12px]">
+                        {crypto.symbol}
+                      </p>
                     </div>
                   </div>
-                  <div className="text-2xl font-medium mt-6">
+                  <div className="text-3xl font-medium mt-6">
                     ${parseFloat(crypto.price_usd).toLocaleString()}
                   </div>
                   <div

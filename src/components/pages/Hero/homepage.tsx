@@ -1,15 +1,23 @@
 import {
+  ActionButton,
   CryptoCurrencyInfo,
   CryptoCurrencyInfoList,
   CryptoDataBTC,
-} from "@/components/shared/Crypto";
-import React from "react";
+  SecureFeatures,
+  SelectedPage,
+  WatchDemoButton,
+} from "@/components/shared";
 
-export const Home: React.FC = () => {
+type Props = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+export const Home = ({ setSelectedPage }: Props) => {
   return (
     <div className="gap-16 py-10 md:h-full md:pb-10">
       <div className="md:flex md:gap-8 mx-auto w-5/6 items-center justify-between">
-        <div className="mt-32 basis-3/5 ">
+        <div className="mt-24 basis-3/5 ">
           <div className="p-3 rounded-md bg-primary-100/20 flex items-center justify-center md:w-[240px]">
             <p className="font-[500] text-sm text-primary-100">
               Best platform Cryptocurrency
@@ -31,6 +39,17 @@ export const Home: React.FC = () => {
               every workout earns you rewards, and where community thrives on
               shared goals
             </p>
+          </div>
+
+          <div className="flex items-center gap-4 w-full">
+            <ActionButton setSelectedPage={setSelectedPage}>
+              Trade Now
+            </ActionButton>
+            <WatchDemoButton />
+          </div>
+
+          <div className="py-10">
+            <SecureFeatures />
           </div>
         </div>
         <div className="flex md:justify-end basis-3/5  ">

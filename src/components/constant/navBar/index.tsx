@@ -15,16 +15,18 @@ const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggle, setIsMenuToggle] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const flexCenter = "flex items-center justify-center";
-  const navbarBackground = isTopOfPage ? "" : "bg-black drop-shadow text-white";
+  const navbarBackground = isTopOfPage
+    ? ""
+    : "bg-primary-200/70 drop-shadow text-white ";
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexCenter} fixed top-0 z-30 w-full py-6`}
+        className={`${navbarBackground} ${flexCenter} fixed top-0 z-30 w-full py-6 `}
       >
         <div className="flex items-center justify-between mx-auto w-5/6 gap-6">
           <div className={`${flexCenter} gap-2`}>
             <SunIcon className="h-8 w-8 text-primary-100" />
-            <h1 className="font-[500]">CoinFlow</h1>
+            <h1 className="font-[500]">Coinflow</h1>
           </div>
           {isAboveMediumScreens ? (
             <>
@@ -82,7 +84,7 @@ const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         <div className="fixed right-0 top-0 bottom-0 z-40 h-[400px] w-full bg-primary-200 drop-shadow-xl">
           <div className="flex justify-between p-12">
             <div>
-              <h1 className="text-white">CoinFlow</h1>
+              <h1 className="text-white">Coinflow</h1>
             </div>
             <button onClick={() => setIsMenuToggle(!isMenuToggle)}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />
