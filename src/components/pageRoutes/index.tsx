@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "@/components/constant/navBar";
 import { Home } from "@/components/pages";
-import { SelectedPage } from "../shared/types";
+import { SelectedPage } from "../shared";
 
 const PageRoutes: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -31,7 +31,15 @@ const PageRoutes: React.FC = () => {
         setSelectedPage={setSelectedPage}
       />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+          }
+        />
       </Routes>
     </div>
   );
