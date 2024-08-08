@@ -24,7 +24,7 @@ const PageRoutes: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="bg-custom-gradient min-h-screen ">
+    <div className=" min-h-screen ">
       <NavBar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}

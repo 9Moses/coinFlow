@@ -29,11 +29,7 @@ const LinkWithDropdown: React.FC<Props> = ({
 
   return (
     <div className="relative inline-block">
-      <div
-        className="flex items-center"
-        onMouseEnter={toggleDropdown}
-        onMouseLeave={closeDropdown}
-      >
+      <div className="flex items-center" onMouseEnter={toggleDropdown}>
         <RouterLink
           to={`/${lowerCasePage}`}
           className={`${
@@ -48,7 +44,10 @@ const LinkWithDropdown: React.FC<Props> = ({
         )}
       </div>
       {dropdownOptions && isOpen && (
-        <div className="absolute left-0 mt-2 w-48 bg-white border shadow-lg z-50">
+        <div
+          className="absolute left-0 mt-2 w-48 bg-white border shadow-lg z-50"
+          onMouseLeave={closeDropdown}
+        >
           {dropdownOptions.map((option, index) => (
             <RouterLink
               key={index}

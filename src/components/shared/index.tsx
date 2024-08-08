@@ -5,3 +5,4 @@ export { CryptoCurrencyInfoList } from "./Crypto/CryptoDataList";
 export { SecureFeatures } from "./secureFeatures/SecureFeatures";
 export { SelectedPage } from "./types";
 export { CryptoDataBTC } from "../shared/Crypto/cryptoDataBTC";
+export { TableDateList } from "./Crypto/TableDataList";

@@ -17,7 +17,7 @@ const NavBar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexCenter = "flex items-center justify-center";
   const navbarBackground = isTopOfPage
     ? ""
-    : "bg-primary-200/70 drop-shadow text-white ";
+    : "bg-primary-200 drop-shadow text-white ";
   return (
     <nav>
       <div

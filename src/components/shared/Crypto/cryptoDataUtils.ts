@@ -7,6 +7,9 @@ export interface CryptoData {
   price_usd: string;
   percent_change_24h: string;
   historical_data?: Array<{ date: string; price: number }>;
+  volume24: string;
+  market_cap_usd: string;
+  image: string;
 }
 
 export const fetchCryptoData = async (): Promise<CryptoData[]> => {
@@ -24,6 +27,7 @@ export const fetchCryptoData = async (): Promise<CryptoData[]> => {
         return { ...crypto, historical_data: historicalData };
       })
     );
+    console.log(dataWithHistory);
     return dataWithHistory;
   } catch (error) {
     console.log(error);
